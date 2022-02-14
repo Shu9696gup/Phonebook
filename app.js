@@ -197,10 +197,7 @@ app.get("/dashboard", isAuth, async (req, res) => {
         //console.log(users)
     }
     catch (err) {
-        return res.send({
-            status: 404,
-            message: "Database error"
-        })
+        return res.redirect('login')
     }
     res.render('dashboard', { users: users })
 })
